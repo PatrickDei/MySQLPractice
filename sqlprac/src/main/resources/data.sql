@@ -1,6 +1,6 @@
 DELETE FROM Question;
 
-INSERT INTO Question (id, title, description, task, answers) VALUES (1,'Question 1', 'Select every column', 'SELECT __ FROM __', '*, Question');
+INSERT INTO Question (id, title, description, task, answers) VALUES (1,'Question 1', 'Select every column from table Question', 'SELECT __ FROM __', '*, Question');
 INSERT INTO Question (id, title, description, task, answers) VALUES (2,'Question 2', 'Select every column', 'SELECT __ FROM __', '*, Question');
 INSERT INTO Question (id, title, description, task, answers) VALUES (3,'Question 3', 'Select every column', 'SELECT __ FROM __', '*, Question');
 

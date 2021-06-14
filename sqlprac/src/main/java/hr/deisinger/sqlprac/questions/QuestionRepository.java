@@ -8,7 +8,6 @@ import java.util.Optional;
 
 public interface QuestionRepository extends JpaRepository<Question, Integer> {
 
-    @Query(value = "select * from Question", nativeQuery = true)
     List<Question> findAll();
 
     Optional<Question> findFirstById (Integer id);

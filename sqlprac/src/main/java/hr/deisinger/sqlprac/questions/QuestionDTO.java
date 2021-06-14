@@ -9,12 +9,15 @@ public class QuestionDTO {
 
     private String text;
 
+    private String task;
+
     private List<String> answers;
 
-    public QuestionDTO(Integer id, String title, String text, List<String> answers) {
+    public QuestionDTO(Integer id, String title, String text, String task, List<String> answers) {
         this.id = id;
         this.title = title;
         this.text = text;
+        this.task = task;
         this.answers = answers;
     }
 
@@ -40,6 +43,14 @@ public class QuestionDTO {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getTask() {
+        return task;
+    }
+
+    public void setTask(String task) {
+        this.task = task;
     }
 
     public List<String> getAnswers() {

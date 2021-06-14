@@ -20,6 +20,7 @@ public class QuestionServiceImpl implements QuestionService{
         return new QuestionDTO(
                 question.getId(),
                 question.getTitle(),
+                question.getDescription(),
                 question.getTask(),
                 Arrays.stream(question.getAnswers().split(",")).collect(Collectors.toList())
         );
