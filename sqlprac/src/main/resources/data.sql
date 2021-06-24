@@ -16,3 +16,5 @@ INSERT INTO Authority (id, name) VALUES (3, 'ROLE_CREATOR');
 INSERT INTO User_Authority (User_Id, Authority_Id) VALUES (1, 2);
 INSERT INTO User_Authority (User_Id, Authority_Id) VALUES (2, 1);
 INSERT INTO User_Authority (User_Id, Authority_Id) VALUES (3, 3);
+
+INSERT INTO User_Question (User_Id, Question_Id) VALUES (2, 1);

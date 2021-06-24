@@ -29,3 +29,11 @@ CREATE TABLE IF NOT EXISTS User_Authority (
        REFERENCES User (id),
   FOREIGN KEY (Authority_Id)
        REFERENCES Authority (id));
+
+CREATE TABLE IF NOT EXISTS User_Question(
+    User_Id INT,
+    Question_Id INT,
+    FOREIGN KEY (User_Id)
+           REFERENCES User (id),
+      FOREIGN KEY (Question_Id)
+           REFERENCES Question (id));

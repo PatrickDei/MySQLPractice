@@ -2,6 +2,7 @@ package hr.deisinger.sqlprac.users;
 
 
 import hr.deisinger.sqlprac.authority.Authority;
+import hr.deisinger.sqlprac.questions.Question;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -29,6 +30,14 @@ public class User {
 
     @ManyToMany
     @JoinTable(
+            name = "User_Question",
+            joinColumns = @JoinColumn(name = "User_Id"),
+            inverseJoinColumns = @JoinColumn(name = "Question_Id")
+    )
+    private Set<Question> questionsCompleted;
+
+    @ManyToMany
+    @JoinTable(
             name = "User_Authority",
             joinColumns = @JoinColumn(name = "User_Id"),
             inverseJoinColumns = @JoinColumn(name = "Authority_Id"))
@@ -36,12 +45,13 @@ public class User {
 
     public User(){}
 
-    public User(Integer id, String username, String password, String firstName, String lastName, Set<Authority> authorities) {
+    public User(Integer id, String username, String password, String firstName, String lastName, Set<Question> questionsCompleted, Set<Authority> authorities) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.questionsCompleted = questionsCompleted;
         this.authorities = authorities;
     }
 
@@ -91,5 +101,13 @@ public class User {
 
     public void setAuthorities(Set<Authority> authorities) {
         this.authorities = authorities;
+    }
+
+    public Set<Question> getQuestionsCompleted() {
+        return questionsCompleted;
+    }
+
+    public void setQuestionsCompleted(Set<Question> questionsCompleted) {
+        this.questionsCompleted = questionsCompleted;
     }
 }
