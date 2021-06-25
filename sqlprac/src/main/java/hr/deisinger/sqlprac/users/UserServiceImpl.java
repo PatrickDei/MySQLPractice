@@ -1,6 +1,7 @@
 package hr.deisinger.sqlprac.users;
 
 import hr.deisinger.sqlprac.authority.Authority;
+import hr.deisinger.sqlprac.questions.Question;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -16,7 +17,14 @@ public class UserServiceImpl implements UserService{
     }
 
     private UserDTO toUserDTO(User user){
-        return new UserDTO(user.getId(), user.getUsername(), user.getFirstName(), user.getLastName(), user.getAuthorities().stream().map(Authority::getName).collect(Collectors.toSet()));
+        return new UserDTO(
+                user.getId(),
+                user.getUsername(),
+                user.getFirstName(),
+                user.getLastName(),
+                user.getAuthorities().stream().map(Authority::getName).collect(Collectors.toSet()),
+                user.getQuestionsCompleted().stream().map(Question::getId).collect(Collectors.toSet())
+        );
     }
 
     @Override

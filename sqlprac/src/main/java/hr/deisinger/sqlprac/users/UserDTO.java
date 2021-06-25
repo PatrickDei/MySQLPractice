@@ -9,13 +9,15 @@ public class UserDTO {
     private String firstName;
     private String lastName;
     private Set<String> authorities;
+    private Set<Integer> completedQuestions;
 
-    public UserDTO(long id, String username, String firstName, String lastName, Set<String> authorities) {
+    public UserDTO(long id, String username, String firstName, String lastName, Set<String> authorities, Set<Integer> completedQuestions) {
         this.id = id;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.authorities = authorities;
+        this.completedQuestions = completedQuestions;
     }
 
     public long getId() {
@@ -56,5 +58,13 @@ public class UserDTO {
 
     public void setAuthorities(Set<String> authorities) {
         this.authorities = authorities;
+    }
+
+    public Set<Integer> getQuestions() {
+        return completedQuestions;
+    }
+
+    public void setQuestions(Set<Integer> completedQuestions) {
+        this.completedQuestions = completedQuestions;
     }
 }

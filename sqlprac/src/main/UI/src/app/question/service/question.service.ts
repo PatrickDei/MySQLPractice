@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
-import {Question} from '../models/question';
+import {Question} from '../../models/question';
 import {catchError, tap} from 'rxjs/operators';
 import {log} from 'util';
+import {handleError} from '../../errorHandler';
+import {API_URL} from '../../constants/app.constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionService {
 
-  private url = 'http://localhost:8080/question';
+  private url = API_URL + '/question';
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
@@ -22,7 +24,7 @@ export class QuestionService {
     return this.http.get<Question[]>(this.url)
       .pipe(
           tap( () => console.log('successfully fetched questions')),
-          catchError(this.handleError('getAllQuestions'))
+          catchError(handleError('getAllQuestions'))
       );
   }
 
@@ -30,15 +32,7 @@ export class QuestionService {
     return this.http.get(this.url + '/' + id)
       .pipe(
         tap( () => console.log('successfully fetched question with id = ' + id)),
-        catchError(this.handleError('getQuestionWithId'))
+        catchError(handleError('getQuestionWithId'))
       );
-  }
-
-  private handleError<T>(operation: string = 'operation', result?: T): any{
-    return (error: any): Observable<T> => {
-      console.error(operation);
-      console.error(error);
-      return of(result as T);
-    };
   }
 }
