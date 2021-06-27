@@ -5,9 +5,9 @@ INSERT INTO Question (id, title, description, task, answers) VALUES (2,'Question
 INSERT INTO Question (id, title, description, task, answers) VALUES (3,'Question 3', 'Select every column', 'SELECT __ FROM __', '*, Question');
 
 
-INSERT INTO User (id, username, password, first_name, last_name) VALUES (1, 'user', '$2y$12$s5aIBe/DZYHAs/TxGNQPU.wCg6osGK0L4cGmIC.1zvEFg9A/HSb8i', 'Patrick', 'Deisinger');
-INSERT INTO User (id, username, password, first_name, last_name) VALUES (2, 'admin', '$2y$12$WWCm2WJSeKl/x01SvhR6MO94M50YkCrm.WAjP5AymC4dXh2fvKlwe', 'Administrator', 'Admin');
-INSERT INTO User (id, username, password, first_name, last_name) VALUES (3, 'creator', '$2y$12$Rzc74rOMKsENRYwZOY9lZ.JW1OQPKnCCz4xBX1Gg4XYbtymvhlja6', 'Creator', 'Creator');
+INSERT INTO User (id, username, password, first_name, last_name) VALUES (1, 'user', '$2a$10$E0Q/oijh4HPf55KXRI6X1.QK8Q5ivvNXFWEkLUqjzGO.Nt3eSaFzu', 'Patrick', 'Deisinger');
+INSERT INTO User (id, username, password, first_name, last_name) VALUES (2, 'admin', '$2a$12$XOsVBKD3dPukGGwKBIJq0eLhuBVgkGYVAdlo/Zevd9SxNWPRUZErq', 'Administrator', 'Admin');
+INSERT INTO User (id, username, password, first_name, last_name) VALUES (3, 'creator', '$2a$12$us1tT/VUkb1gCcRQbQNOOeBbnvBk9xJtHHEF0te4ygI1VZ1YffvgO', 'Creator', 'Creator');
 
 INSERT INTO Authority (id, name) VALUES (1, 'ROLE_ADMIN');
 INSERT INTO Authority (id, name) VALUES (2, 'ROLE_USER');

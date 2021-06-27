@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Optional<UserDTO> findByUsername(String username) {
-        return userRepository.findFirstByUsername(username).map(this::toUserDTO);
+        return userRepository.findOneByUsername(username).map(this::toUserDTO);
     }
 }
 

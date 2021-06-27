@@ -19,7 +19,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getCurrentUser(): Observable<User>{
-    return this.http.get<User>(this.userUrl)
+    return this.http.get<User>(this.userUrl + '/current')
       .pipe(
         tap( res => console.log(res)),
         catchError(handleError('getCurrentUser'))
